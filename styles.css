@@ -1,7 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
     box-sizing:border-box;
     padding:0;
     margin:0;
+    font-family: 'Roboto', sans-serif;
 }
 
 /** MAIN SECTION **/
@@ -19,8 +23,14 @@
 }
 
 .game-option {
+    font-size: 32px;
+    font-weight:bolder;
+    gap: 40px;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
     position:relative;
-    background-color: red;
     width:250px;
     height:250px;
 }
@@ -29,27 +39,71 @@
     position:absolute;
     display:inline-block;
     height:10px;
+    border-radius:5px;
     width:0;
-    left:50%;
-    bottom:-10px;
+    left:0;
+    bottom:-50px;
     content:'';
     background-color: black;
-    transition: width 0.25s ease 0s, left 0.25s ease 0s;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
 }
 
 .game-option.rock::after {
-    background-color: #F6A8A6;
+    background-color: #C0ECCC;
 }
 .game-option.paper::after {
     background-color: #A5C8E4;
     
 }
 .game-option.scissors::after {
-    background-color: #C0ECCC;
+    background-color:  #F6A8A6;
 }
 
 .game-option:hover::after {
     width:100%;
-    left: 0;
 }
 
+.game-option img {
+  width:75%;
+    height:75%;
+}
+
+
+
+
+.paper-header {
+  background: linear-gradient(to right, #A5C8E4,#A5C8E4 50%, rgb(181, 174, 174) 50%);
+}
+  
+.rock-header {
+  background: linear-gradient(to right, #C0ECCC,#C0ECCC 50%, rgb(181, 174, 174) 50%);
+}
+
+.scissors-header {
+  background: linear-gradient(to right, #F6A8A6,#F6A8A6 50%, rgb(181, 174, 174) 50%);
+}
+
+
+.option-header {
+  font-size:32px;
+  background-position: right;
+  transition: background-position 0.3s ease;
+  background-size:200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.game-option:hover .option-header {
+  background-position: left;
+  transition: background-position 0.3s ease;
+}
+
+.game-option:hover img {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+  
+}
+
+img {
+  transition: all 0.3s ease-in-out;
+}
